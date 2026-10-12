@@ -1,1 +1,23 @@
+services:
+  homebox:
+    image: ghcr.io/sysadminsmedia/homebox:latest-rootless
+    container_name: homebox
+    restart: unless-stopped
+    environment:
+      - TZ=America/Los_Angeles
+      - HBOX_LOG_LEVEL=info
+      - HBOX_LOG_FORMAT=text
+      - HBOX_WEB_MAX_UPLOAD_SIZE=10
+      - HBOX_OPTIONS_ALLOW_ANALYTICS=false
+      - HBOX_AUTH_API_KEY_PEPPER=${HBOX_PEPPER}   # generate with: openssl rand -base64 48
+    volumes:
+      - /fastpool/homebox:/data
+    ports:
+      - "3100:7745"   # or bind only to LAN IP if desired
+    # optional extra hardening you can still add:
+    security_opt:
+     - no-new-privileges:true
+    cap_drop:
+     - ALL
 
+      # Healthcheck:  homebox comes with a built in healthcheck
