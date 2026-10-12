@@ -40,7 +40,7 @@ AI-assisted using Grok and Claude.
 
 ---
 
-## In Work
+## Intro
 
 - Debian 13 Trixie on a single boot disk with two ZFS pools
 - SSH, SSH Keys, Firewalld, Cockpit, Cockpit Files, ClamAV, Tailscale, Samba, Docker, Dockhand, Netdata, etc.
