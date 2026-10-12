@@ -1,1 +1,38 @@
+services:
+  clamav:
+    image: clamav/clamav:stable          # or pin an exact version, e.g. clamav/clamav:1.4
+    container_name: clamav
+    environment:
+      # Disable clamd – we only use clamscan (saves ~1 GB RAM)
+      CLAMAV_NO_CLAMD: "true"
+      TZ: "America/Los_Angeles"
+    volumes:
+      # Persist virus definitions so they don’t re-download every time
+      - clamav-db:/var/lib/clamav
 
+      # === Paths that Option B is allowed to move infected files from ===
+      # (no :ro – required for --move to work)
+      - /bulkpool/mediavault:/scan/mediavault
+      - /fastpool/documents/perry:/scan/perry
+
+      # === Paths that should never be moved (live app data) ===
+      # Keep these read-only so Option B cannot touch them
+      - /fastpool/appdata/configs:/scan/configs:ro
+      - /fastpool/appdata/databases:/scan/databases:ro
+      - /fastpool/appdata/cache:/scan/cache:ro
+      - /fastpool/homebox:/scan/homebox:ro
+
+      # Quarantine folder (writable)
+      - /fastpool/quarantine:/quarantine
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp
+      - /run
+    restart: "no"
+    mem_limit: 3g
+    healthcheck:
+      disable: true          # Healthcheck pings clamd, which we disabled
+
+volumes:
+  clamav-db:
