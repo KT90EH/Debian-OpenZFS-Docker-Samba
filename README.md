@@ -1841,39 +1841,6 @@ The most important practices throughout are:
 
 ---
 
-# Quick commands summary
 
-```bash
-# update packages
-sudo apt update
-
-# install basics
-sudo apt install -y curl wget git vim nano htop ncdu tree unzip zip rsync tmux net-tools dnsutils sudo gnupg2 ca-certificates hdparm
-
-# enable firewall
-sudo apt install firewalld
-sudo systemctl enable --now firewalld
-
-# enable Cockpit
-sudo apt install -t trixie-backports cockpit
-sudo systemctl enable --now cockpit.socket
-
-# verify ZFS installation
-modprobe zfs
-zpool version
-
-# create a ZFS pool
-sudo zpool create -o ashift=12 -o autoexpand=on -O compression=lz4 -O atime=off -O xattr=sa -O acltype=posixacl -O dnodesize=auto -O recordsize=128k bulkpool mirror /dev/disk/by-id/...
-
-# test Samba config
-sudo testparm -s
-
-# restart Docker after firewall changes
-sudo systemctl restart docker
-
-# test DNS
-nslookup cloudflare.com
-resolvectl status
-```
 
 This file represents the core notes and commands required to set up and maintain the server. It can be expanded over time as the system evolves.
