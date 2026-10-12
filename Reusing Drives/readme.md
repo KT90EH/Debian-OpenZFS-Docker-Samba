@@ -1,4 +1,4 @@
-# Backup your data first...before making SSD's and HDD's ready to be reused.
+> ⚠️ Backup your data first...before making SSD's and HDD's ready to be reused.
 
 TrueNAS Scale has a GUI for wiping drives. Here’s the flow:
 
