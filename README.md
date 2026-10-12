@@ -15,7 +15,7 @@ AI-assisted using Grok and Claude.
 
 ## Table of Contents
 
-- [In Work](#in-work)
+- [Intro](#Intro)
 - [Install Debian 13 Trixie (ext4)](#install-debian-13-trixie-ext4)
 - [Debian 13 Manual Partitioning — SATA SSD / ext4](#debian-13-manual-partitioning--sata-ssd--ext4)
 - [Post Install Server Setup](#post-install-server-setup)
