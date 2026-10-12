@@ -1,3 +1,5 @@
+Backup your data first...
+
 TrueNAS Scale has GUI wrappers for most of this, plus shell access if you need it. Here’s the flow:
 
 Via the Web UI (recommended — safest)
@@ -19,11 +21,5 @@ Full with zeros – overwrites entire disk with zeros
 Full with random data – slower, for sensitive data disposal
 For NVMe reuse in a new pool, Quick is normally enough since you’re not disposing of the drive
 
-3. Create the new pool
-
-Storage → Create Pool
-The wiped disk should now show as available/unused
-Select it, assign vdev type, and create
-Verifying you have the right disk
 
 Before wiping, hover/check the disk’s serial in the UI — TrueNAS shows it directly in Storage → Disks, so you don’t have to hunt through /dev/disk/by-id/ yourself like on bare Linux. Cross-reference against the pool’s old config (Storage → pool → Status shows serials per vdev member) to be sure.
