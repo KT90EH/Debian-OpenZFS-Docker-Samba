@@ -1,6 +1,8 @@
 # Homebox Setup Guide  
 Debian 13 + Docker + OpenZFS + Samba (LAN only)
 
+AI-assisted using Claude.
+
 ## Recommended Image
 
 Use the **rootless** image:
