@@ -1199,7 +1199,7 @@ All three servers use the same setup. This guide is the single reference for it,
 **What every server ends up with:**
 
 - The server looks up names through Quad9, and those lookups are **encrypted** (DNS-over-TLS).
-- Tailscale names like `visna.<tailnet-name>n.ts.net` still work.
+- Tailscale names like `visna.<tailnet-name>.ts.net` still work.
 - Docker containers use Quad9 directly, **not encrypted**. That is on purpose, because encrypting containers can mean extra upkeep every time you add a Compose stack. The appendix at the end explains how to change that if you ever want to.
 
 ### The only differences between the servers
