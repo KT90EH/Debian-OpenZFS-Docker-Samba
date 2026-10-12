@@ -1,6 +1,6 @@
-Backup your data first...
+# Backup your data first...before making SSD's and HDD's ready to be reused.
 
-TrueNAS Scale has GUI wrappers for most of this, plus shell access if you need it. Here’s the flow:
+TrueNAS Scale has a GUI for wiping drives. Here’s the flow:
 
 Via the Web UI (recommended — safest)
 
