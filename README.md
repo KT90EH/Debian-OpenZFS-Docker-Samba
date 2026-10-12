@@ -1678,7 +1678,7 @@ Reference guides:
 - [Install Netdata with kickstart.sh](https://learn.netdata.cloud/docs/netdata-agent/installation/linux/)
 - [A Complete Netdata Course — 8 Episodes, Zero to Production](https://www.netdata.cloud/resources/netdata-tutorial/)
 
-> ⚠️ Use Cockpit to add netdata port 19999 to firewalld. Networking -> active zones  ->  Add service -> netdata-dashboard
+> ⚠️ Use Cockpit to add netdata port 19999 to firewalld. Networking -> active zones  ->  Add services -> netdata-dashboard
 
 ### 2.0 Enable Bearer Token Protection to Secure Port 19999
 
